@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, Polyline, LoadScript, MarkerClusterer } from '@react-google-maps/api';
 import { getRoute, getDistance, getETA } from '../utils/mapUtils';
-import { Loader } from "@googlemaps/js-api-loader"
 
 const libraries = ["places"];
+// dotenv.config();
 const startingPoint = { lat: -1.939826787816454, lng: 30.0445426438232 };
 const stops = [
   { lat: -1.9355377074007851, lng: 30.060163829002217 },
@@ -70,7 +70,7 @@ const Map = ({ currentLocation, onLocationChange, nextStop }) => {
 
   return (
       <LoadScript
-          googleMapsApiKey="AIzaSyDY9LXPwO2ig_f3WRkGUM7u9jrr1EhQVUw"
+          googleMapsApiKey={import.meta.env.VITE_MAP_KEY}
           loadingElement={<div>Loading...</div>}
           libraries={libraries}
       >
