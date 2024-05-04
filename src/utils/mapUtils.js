@@ -49,6 +49,7 @@ export const getETA = (route) => {
   return `${duration} (${distance})`;
 };
 
+
 function getDistanceBetweenCoordinates(lat1, lon1, lat2, lon2) {
   const R = 6371; 
   const dLat = deg2rad(lat2 - lat1);
