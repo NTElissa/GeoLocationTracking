@@ -75,17 +75,15 @@ const Map = ({ currentLocation, onLocationChange, nextStop }) => {
           libraries={libraries}
       >
         <GoogleMap
-            zoom={16} // Increased zoom level
-            center={center} // Use the calculated center
+            zoom={16} 
+            center={center} 
             mapContainerStyle={{ height: '500px', width: '100%' }}
         >
-          {/* Render starting point marker */}
+         
           <Marker position={startingPoint} label="Starting Point" />
 
-          {/* Render ending point marker */}
           <Marker position={endingPoint} label="Ending Point" />
 
-          {/* Render route polyline */}
           {route && (
               <Polyline
                   path={route.overview_path.map((coord) => ({
@@ -107,14 +105,14 @@ const Map = ({ currentLocation, onLocationChange, nextStop }) => {
               />
           )}
 
-          {/* Render current location marker */}
+         
           <Marker
               position={currentLocation}
               draggable={true}
               onDragEnd={handleDragEnd}
           />
 
-          {/* Render next stop marker */}
+          
           {nextStop && (
               <Marker
                   position={nextStop}
@@ -122,7 +120,7 @@ const Map = ({ currentLocation, onLocationChange, nextStop }) => {
               />
           )}
 
-          {/* Render final destination marker when there are no more stops */}
+        
           {!nextStop && (
               <Marker position={endingPoint} label="Final Destination" />
           )}

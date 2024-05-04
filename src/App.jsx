@@ -10,7 +10,7 @@ const stops = [
     { lat: -1.9487480402200394, lng: 30.126596781356923 },
 ];
 
-const MAX_DISTANCE_TO_STOP = 0.01; // Distance in degrees (adjust as needed)
+const MAX_DISTANCE_TO_STOP = 0.01; 
 
 function App() {
     const [currentLocation, setCurrentLocation] = useState(startingPoint);
@@ -55,15 +55,15 @@ function App() {
 
 // Helper function to calculate distance between two coordinates
 function getDistanceBetweenCoordinates(lat1, lon1, lat2, lon2) {
-    const R = 6371; // Radius of the Earth in kilometers
+    const R = 6371; 
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const distance = R * c; // Distance in kilometers
-    return distance * 111.32; // Convert to degrees
+    const distance = R * c;
+    return distance * 111.32; 
 }
 
 function deg2rad(deg) {
